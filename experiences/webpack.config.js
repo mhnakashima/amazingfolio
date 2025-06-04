@@ -1,11 +1,18 @@
-const { shareAll, withModuleFederationPlugin } = require('@angular-architects/module-federation/webpack');
+const {
+  shareAll,
+  withModuleFederationPlugin,
+} = require("@angular-architects/module-federation/webpack");
 
-module.exports = withModuleFederationPlugin({
-  name: 'experiences',
-  exposes: {
-    './Component': './src/app/app.component.ts',
+module.exports = {
+  output: {
+    publicPath: 'http://localhost:4200/',
+    uniqueName: 'experiences',
+    scriptType: 'text/javascript'
   },
-  shared: {
-    ...shareAll({ singleton: true, strictVersion: true, requiredVersion: 'auto' }),
+  optimization: {
+    runtimeChunk: false
   },
-});
+  experiments: {
+    outputModule: true
+  }
+};

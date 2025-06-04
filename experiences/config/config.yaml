@@ -1,0 +1,47 @@
+default: &default
+  mode:
+    webComponent:
+      enabled: true
+      detection:
+        type: port
+        value: 3010
+    standalone:
+      enabled: true
+      port: 4200
+  features: {}
+
+development:
+  <<: *default
+  mode:
+    webComponent:
+      enabled: true
+      detection:
+        type: port
+        value: 3010
+    standalone:
+      enabled: true
+      port: 4200
+
+production:
+  <<: *default
+  mode:
+    webComponent:
+      enabled: true
+      detection:
+        type: hostname
+        value: your-production-domain.com
+    standalone:
+      enabled: true
+      port: 80
+
+staging:
+  <<: *default
+  mode:
+    webComponent:
+      enabled: true
+      detection:
+        type: hostname
+        value: staging-domain.com
+    standalone:
+      enabled: true
+      port: 80 
