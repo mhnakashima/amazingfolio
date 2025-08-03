@@ -1,5 +1,13 @@
 import { createApp } from 'vue'
-import './style.css'
+import './style.scss'
 import App from './App.vue'
+import { isWebComponentMode } from './config/config';
 
-createApp(App).mount('#app')
+
+const isWebComponent = isWebComponentMode();
+
+if (!isWebComponent) {
+  createApp(App).mount('#app')
+} else {
+  createApp(App).mount('#app')
+}

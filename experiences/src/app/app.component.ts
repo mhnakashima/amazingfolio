@@ -1,12 +1,20 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  imports: [RouterOutlet],
+  selector: 'app-root',  // Keep it simple with just app-root
+  standalone: false,
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss'],
+  encapsulation: ViewEncapsulation.ShadowDom,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
   title = 'experiences';
+  isWebComponent: boolean;
+
+  constructor() {
+    // Check if running as web component
+    this.isWebComponent = document.querySelector('experiences-element') !== null;
+    console.log(`Running as ${this.isWebComponent ? 'Web Component' : 'Standalone App'}`);
+  }
 }
