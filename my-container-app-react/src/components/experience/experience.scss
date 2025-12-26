@@ -1,0 +1,30 @@
+.projects-timeline {
+  position: relative;
+
+  .project-item {
+    position: relative;
+    z-index: 1;
+
+    // Ensure bullets are above the line
+    > div:first-child {
+      z-index: 2;
+    }
+
+    // Vertical line segment from current bullet to next bullet
+    // Only on items that are NOT the last one
+    &:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      left: 0.25rem; // Center of bullet (w-2 h-2 = 0.5rem, center is 0.25rem)
+      top: 0.75rem; // Start from current bullet center (top-2 = 0.5rem + half bullet 0.25rem = 0.75rem)
+      // Extend down to reach the next bullet center
+      // From current bullet center (0.75rem) to next bullet center
+      // Next bullet is at: bottom of current item + margin (2.5rem) + bullet offset (0.75rem)
+      // Since we start at 0.75rem, we need: 100% - 0.75rem + 2.5rem + 0.75rem = 100% + 2.5rem
+      height: calc(100% + 2.5rem);
+      width: 1px;
+      background-color: rgba(0, 0, 0, 0.2); // 20% opacity
+      z-index: 0;
+    }
+  }
+}

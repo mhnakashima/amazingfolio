@@ -2,29 +2,14 @@
 // You can import this as: import styles from './App.module.scss'
 
 .app {
-  display: grid;
-  grid-template-areas: "sidebar" "main-page";
-  grid-template-columns: 1fr;
-  grid-template-rows: auto auto;
-  min-height: 100vh;
+  display: flex;
   width: 100%;
-
-  @media (min-width: 1200px) {
-    grid-template-areas: "sidebar main-page";
-    grid-template-columns: 400px 1fr;
-    grid-template-rows: 1fr;
-  }
 }
 
 .sidebar {
-  grid-area: sidebar;
   border-right: none;
-
-  @media (min-width: 1200px) {
-    border-right: 1px solid rgba(0, 0, 0, 0.5);
-  }
 }
 
 .mainPage {
-  grid-area: main-page;
+  flex: 1;
 }

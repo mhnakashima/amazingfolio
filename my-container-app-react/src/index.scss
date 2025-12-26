@@ -1,6 +1,12 @@
-@use "tailwindcss";
 @use "./assets/styles/abstracts/variables" as *;
 @use "./assets/styles/abstracts/mixins" as *;
 @use "./assets/styles/abstracts/fonts";
 @use "./assets/styles/layouts/pages";
+
+/* Let Tailwind's Preflight handle the reset */
+/* Only add custom body styles */
+body {
+  background-color: #f0f2f5; /* Light blue-grey background */
+  min-height: 100vh;
+}
 
