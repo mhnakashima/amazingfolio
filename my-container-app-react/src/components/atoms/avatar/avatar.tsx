@@ -1,4 +1,4 @@
-import eu from "./../../assets/images/eu.jpeg";
+import eu from "./../../../assets/images/eu.jpeg";
 
 const Avatar = () => {
   return (

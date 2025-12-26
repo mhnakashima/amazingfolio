@@ -1,6 +1,6 @@
-import Avatar from "../avatar/avatar";
-import Headline from "../headline/Headline";
-import Navigation from "../navigation/Navigation";
+import Avatar from "../../atoms/avatar/avatar";
+import Headline from "../../atoms/headline/Headline";
+import Navigation from "../../molecules/navigation/Navigation";
 
 const Sidebar = () => {
   return (

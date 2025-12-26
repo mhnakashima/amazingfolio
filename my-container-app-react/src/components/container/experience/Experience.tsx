@@ -1,8 +1,8 @@
 import "./experience.scss";
 import ExperienceCompany from "./ExperienceCompany";
-import ciandtLogo from "../../assets/images/ciandt_logo.jpeg";
-import takeblipLogo from "../../assets/images/takeblip_logo.jpeg";
-import totvsLogo from "../../assets/images/totvs_logo.jpeg";
+import ciandtLogo from "../../../assets/images/ciandt_logo.jpeg";
+import takeblipLogo from "../../../assets/images/takeblip_logo.jpeg";
+import totvsLogo from "../../../assets/images/totvs_logo.jpeg";
 
 const Experience = ({ className }: { className?: string }) => {
   return (
